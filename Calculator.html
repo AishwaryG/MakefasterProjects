@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        background-color: rgb(140, 244, 244);
+      }
+      input {
+        height: 80px;
+        border: 0;
+        outline: 0;
+        background-color: rgb(158, 158, 157);
+        color: #000000;
+        border-radius: 5px;
+        width: 18rem;
+      }
+      input:hover {
+        background-color: black;
+        color: white;
+      }
+
+      button {
+        height: 50px;
+        width: 50px;
+        border: 1px solid #000;
+        border-radius: 50%;
+      }
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .operators {
+        background-color: rgb(237, 123, 82);
+      }
+      table {
+        margin: 50px auto;
+        background-color: whitesmoke;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+      }
+
+      button:hover {
+        background-color: #000;
+        color: #fff;
+        font-size: 20px;
+        transition: 0.3s all;
+      }
+    </style>
+    <script>
+      function oneText() {
+        var x = document.getElementById("t1").value;
+        x = x.substr(0, x.length - 1);
+        document.getElementById("t1").value = x;
+      }
+    </script>
+  </head>
+  <body>
+    <form name="cale">
+      <table>
+        <tr>
+          <td colspan="4">
+            <input type="text" name="box" id="t1" readonly />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" class="operators" onclick="oneText()">
+              &larr;
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value = ''"
+            >
+              C
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value += '%'"
+            >
+              %
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value += '00'"
+            >
+              00
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="cale.box.value += '7'">7</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '8'">8</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '9'">9</button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value += '+'"
+            >
+              +
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="cale.box.value += '4'">4</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '5'">5</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '6'">6</button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value += '-'"
+            >
+              --
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="cale.box.value += '1'">1</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '2'">2</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '3'">3</button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value += '*'"
+            >
+              X
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="cale.box.value += '.'">.</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '0'">0</button>
+          </td>
+          <td>
+            <button type="button" onclick="cale.box.value += '/'">/</button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="operators"
+              onclick="cale.box.value =eval(cale.box.value)"
+            >
+              =
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
